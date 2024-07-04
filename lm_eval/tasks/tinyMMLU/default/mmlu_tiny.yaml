@@ -1,0 +1,6 @@
+"dataset_name": "all"
+"group": "mmlu_tiny"
+"group_alias": "tiny"
+"include": "_default_template_yaml"
+"task": "tinyMMLU"
+"task_alias": "tinyMMLU"

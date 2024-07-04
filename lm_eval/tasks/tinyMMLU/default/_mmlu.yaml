@@ -1,0 +1,7 @@
+group: mmlu
+task:
+  - mmlu_tiny
+  #- mmlu_stem
+  #- mmlu_other
+  #- mmlu_social_sciences
+  #- mmlu_humanities
