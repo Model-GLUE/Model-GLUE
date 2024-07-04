@@ -4,8 +4,8 @@
 
 Code for the paper "**Model-GLUE: Democratized LLM Scaling for A Large Model Zoo in the Wild**".
 
-* Authors: Xinyu Zhao\*, Guoheng Sun\*, Ruisi Cai\*, Yukun Zhou\*, Pingzhi Li\*, Peihao Wang\*, Bowen Tan, Yexiao He, Li Chen, Yi Liang, Beidi Chen, Binhang Yuan, Hongyi Wang$\dag$, Ang Li$\dag$, Zhangyang Wang$\dag$, Tianlong Chen$\dag$
-* \* Equal contribution, $\dag$ Equal supervision
+* Authors: Xinyu Zhao\*, Guoheng Sun\*, Ruisi Cai\*, Yukun Zhou\*, Pingzhi Li\*, Peihao Wang\*, Bowen Tan, Yexiao He, Li Chen, Yi Liang, Beidi Chen, Binhang Yuan, Hongyi Wang^, Ang Li^, Zhangyang Wang^, Tianlong Chen^
+* \* Equal contribution, ^ Equal supervision
 
 ## Overview
 
@@ -28,15 +28,39 @@ conda activate modelglue
 
 pip install -r requirements.txt
 ```
-2. Install lm-eval
+2. Install mergekit
+```shell
+git clone https://github.com/arcee-ai/mergekit.git -b mixtral
+cd mergekit
+
+pip install -e . 
+```
+
+3. Install lm-eval
 ```shell
 git clone -b offset_by_id https://github.com/s1ghhh/lm-evaluation-harness.git
 cd lm-evaluation-harness
 pip install --editable ./
 ```
-3. Install bigcode-eval
+4. Install bigcode-eval
 ```shell
 git clone https://github.com/bigcode-project/bigcode-evaluation-harness.git
 cd bigcode-evaluation-harness && git checkout 00967d1
 pip install --editable ./
 ```
+
+## Model Merging
+```shell
+. scripts/run_heuristic_merge.sh
+```
+
+## Model Mixture 
+```shell
+. scripts/run_mixture.sh
+```
+
+## Model-GLUE: mixture of selectively merged model clusters
+Model cluster example can be found at [here](https://huggingface.co/s1ghhh/which16_merged) 
+
+## Evalution
+Please refer to `eval_tools.py`

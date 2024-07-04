@@ -1,0 +1,54 @@
+base_model: /path/to/merged/model
+gate_mode: hidden
+experts:
+  - source_model: migtissera/Synthia-7B-v1.2
+    positive_prompts:
+      - "chat"
+      - "assistant"
+      - "tell me"
+      - "explain"
+    negative_prompts:
+      - "storywriting"
+      - "mathematics"
+      - "reasoning"
+      - "code"
+      - "programming"
+  - source_model: neuralmagic/Llama-2-7b-evolcodealpaca
+    positive_prompts:
+      - "code"
+      - "python"
+      - "programming"
+      - "algorithm"
+    negative_prompts:
+      - "chat"
+      - "assistant"
+      - "storywriting"
+      - "mathematics"
+      - "reasoning"
+  - source_model: PygmalionAI/pygmalion-2-7b
+    positive_prompts:
+      - "storywriting"
+      - "write"
+      - "scene"
+      - "story"
+      - "character"
+    negative_prompts:
+      - "chat"
+      - "assistant"
+      - "code"
+      - "programming"
+      - "mathematics"
+      - "reasoning"
+  - source_model: meta-math/MetaMath-7B-V1.0
+    positive_prompts:
+      - "reason"
+      - "math"
+      - "mathematics"
+      - "solve"
+      - "count"
+    negative_prompts:
+      - "chat"
+      - "assistant"
+      - "code"
+      - "programming"
+      - "storywriting"

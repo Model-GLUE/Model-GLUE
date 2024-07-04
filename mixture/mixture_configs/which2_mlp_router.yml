@@ -1,0 +1,6 @@
+base_model: /path/to/merged/model
+gate_mode: mlp
+experts_per_token: 1
+experts:
+  - source_model: meta-llama/Llama-2-7b-chat-hf
+  - source_model: lmsys/vicuna-7b-v1.5
